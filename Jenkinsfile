@@ -15,5 +15,15 @@ pipeline {
                 }
             }
         }
+        stage('Stage three - Build and push') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {
+                        sh 'docker build -t tuzdu1202/testpipeline'
+                        sh 'docker push tuzdu1202/testpipeline'
+                    }
+                }
+            }
+        }
     }
 }
