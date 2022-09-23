@@ -35,5 +35,11 @@ namespace testdocker.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet("data")]
+        public IActionResult GetData()
+        {
+            return new JsonResult("Hi");
+        }
     }
 }
