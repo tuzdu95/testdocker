@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    tools {dockerTool  "docker" } 
     stages {
         stage('Stage one - edited') {
             steps {
